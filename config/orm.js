@@ -104,5 +104,5 @@ let orm = {
 
 };
 
-// Export the orm object for the model (cat.js).
+// Export the orm object for the model (villager.js).
 module.exports = orm;

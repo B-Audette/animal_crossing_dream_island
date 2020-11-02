@@ -1,41 +1,37 @@
-// update vars to consts when applicable, set burger to our villager/beer
-// and condition instead of devoured
+const express = require("express");
 
+const router = express.Router();
 
-var express = require("express");
-
-var router = express.Router();
-
-var burger = require("../models/burger.js");
+const villager = require("../models/villager.js");
 
 router.get("/", function(req, res) {
-  burger.all(function(data) {
+  villager.all(function(data) {
     let hbsObject = {
-      burgers: data
+      villagers: data
     };
     console.log(hbsObject);
     res.render("index", hbsObject);
   });
 });
 
-router.post("/api/burgers", function(req, res) {
-  burger.create([
-    "burger_name", "devoured"
+router.post("/api/villagers", function(req, res) {
+  villager.create([
+    "villager_name", "dreamy"
   ], [
-    req.body.burger_name, req.body.devoured
+    req.body.villager_name, req.body.dreamy
   ], function(result) {
     // Send back the ID of the new quote
     res.json({ id: result.insertId });
   });
 });
 
-router.put("/api/burgers/:id", function(req, res) {
+router.put("/api/villagers/:id", function(req, res) {
   let condition = "id = " + req.params.id;
 
   console.log("condition", condition);
 
-  burger.update({
-    devoured: req.body.devoured
+  villager.update({
+    dreamy: req.body.dreamy
   }, condition, function(result) {
     if (result.changedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404
@@ -46,10 +42,10 @@ router.put("/api/burgers/:id", function(req, res) {
   });
 });
 
-router.delete("/api/burgers/:id", function(req, res) {
+router.delete("/api/villagers/:id", function(req, res) {
   let condition = "id = " + req.params.id;
 
-  burger.delete(condition, function(result) {
+  villager.delete(condition, function(result) {
     if (result.affectedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404
       return res.status(404).end();

@@ -12,8 +12,7 @@ const exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-//name needs to be updated here
-const routes = require("./controllers/subjectController.js");
+const routes = require("./controllers/villagerController.js");
 
 app.use(routes);
 
