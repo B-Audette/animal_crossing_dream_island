@@ -1,6 +1,11 @@
 // Import the ORM to create functions that will interact with the database.
 // this is good as is
+const { villagers } = require("animal-crossing")
+console.log(villagers[3].name, villagers[3].species, villagers[3].personality, villagers[3].hobby)
+
+
 const orm = require("../config/orm.js");
+
 
 let villager = {
   all: function(cb) {

@@ -1,4 +1,13 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
+
+//click event outline for search field
+$(function() {
+    $(".search-form").on("submit", function(event) {
+        event.preventDefault();
+        
+    })
+
+
 $(function() {
     $(".change-dreamy").on("click", function(event) {
       let id = $(this).data("id");
