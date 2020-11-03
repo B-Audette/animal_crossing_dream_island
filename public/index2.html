@@ -24,6 +24,10 @@
 
     <button id="view">view villagers</button>
 
+    <div id="stats"></div>
+    <div id="poster"></div>
+    <div id="house"></div>
+
 </body>
 <script src="https://code.jquery.com/jquery.js"></script>
 
@@ -62,6 +66,17 @@
         $.get("/api/oneVillager/"+ searchedVillager 
         ).then(function (response) {
             console.log(response);
+            $("#stats").append(`<li>Name: ${response.name}</li>`, 
+            `<li>Species: ${response.species}</li>`,
+            `<li>Personality: ${response.personality}</li>`,
+            `<li>Hobby: ${response.hobby}</li>`,
+            `<li>Colors: ${response.colors}</li>`,
+            `<li>Catchphrase: ${response.catchphrase}</li>`,
+            `<li>Birthday: ${response.birthday}</li>`,
+            `<li>Favorite Song: ${response.favoriteSong}</li>`);
+            $("#poster").append(`<img src="${response.photoImage}"/>`)
+            $("#house").append(`<img src="${response.houseImage}"/>`)
+            
         })
     })
     )
