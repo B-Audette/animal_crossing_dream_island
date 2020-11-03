@@ -94,7 +94,7 @@
 
     // adds villager to our database
     $("#add").on("click", function () {
-        $.post("/api/villagers", { "name": "Kevin", "dreamy": true })
+        $.post("/api/villagers", { "name": "Kevin", "dreamy": false })
     })
     //pulls in villagers in our database
     $("#view").on("click", function () {
