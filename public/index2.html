@@ -17,23 +17,34 @@
 <script src="https://code.jquery.com/jquery.js"></script>
 
 <script>
+    // experimenting with some ways to pull in data from the all_villagers api get - this is the npm package
+$.get("/api/all_villagers").then (function(data){
+    $("#data").text(JSON.stringify(data));
+    $("#image-div").html("<img src='https://i1.wp.com/snotapwi.com/wp-content/uploads/2017/03/PBJ-Sandwiches.jpg?resize=590%2C368&ssl=1' />");
+
+
+})
 
 $.get("/api/all_villagers").then (function(data){
     console.log(JSON.stringify(data));
 
     //populate dropdown with list of villagers
+    for(i=0; i < data.length; i++)
+    allVillagerNames = data[i].name
 
 })
-
+// adds villager to our database
 $("#add").on("click", function(){
     $.post("/api/villagers",{"name":"Kevin","dreamy":true})
 })
-
+//pulls in villagers in our database
 $("#view").on("click", function(){
     $.get("api/villagers", function(data){
         console.log(data);
     } )
 })
+
+
 
 </script>
 </html>
