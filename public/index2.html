@@ -8,13 +8,13 @@
 <body>
 
     <div id="data">
-        <form action="/action_page.php">
-            <input list="allVillagers" name="allVillagers">
+        <form action="/ki">
+            <input list="allVillagers" name="allVillagers" id="vi">
             <datalist id="allVillagers">
               <option value>
         
             </datalist>
-            <input type="submit">
+            <input type="submit" id="searchbtn">
           </form>
     </div>
 
@@ -37,15 +37,31 @@ $.get("/api/all_villagers").then (function(data){
 
 
 })
+// set
+// $.get("/api/all_villagers").then (function(data){
+//     console.log(JSON.stringify(data));
 
-$.get("/api/all_villagers").then (function(data){
-    console.log(JSON.stringify(data));
+//     //populate dropdown with list of villagers
+//     for(i=0; i < data.length; i++)
+//     allVillagerNames = data[i].name
 
-    //populate dropdown with list of villagers
-    for(i=0; i < data.length; i++)
-    allVillagerNames = data[i].name
 
-})
+// })
+
+
+$("#searchbtn").click((function(event) {
+  // Make sure to preventDefault on a submit event.
+  event.preventDefault();   
+  let searchedVillager = {
+    name: $("#vi").val().trim()
+    }
+    console.log(searchedVillager)
+
+ 
+
+}))
+
+
 // adds villager to our database
 $("#add").on("click", function(){
     $.post("/api/villagers",{"name":"Kevin","dreamy":true})
