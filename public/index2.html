@@ -7,7 +7,16 @@
 </head>
 <body>
 
-    <div id="data"></div>
+    <div id="data">
+        <form action="/action_page.php">
+            <input list="allVillagers" name="allVillagers">
+            <datalist id="allVillagers">
+              <option value>
+        
+            </datalist>
+            <input type="submit">
+          </form>
+    </div>
 
     <button id="add"> add villager</button>
 
@@ -19,8 +28,12 @@
 <script>
     // experimenting with some ways to pull in data from the all_villagers api get - this is the npm package
 $.get("/api/all_villagers").then (function(data){
-    $("#data").text(JSON.stringify(data));
-    $("#image-div").html("<img src='https://i1.wp.com/snotapwi.com/wp-content/uploads/2017/03/PBJ-Sandwiches.jpg?resize=590%2C368&ssl=1' />");
+    for (i=0; i < data.length; i++) {
+    // $("#data").append(JSON.stringify(data[i].name));
+    // $("#image-div").html("<img src='https:// . . .' />");
+    $("#allVillagers").append("<option value='" + 
+                data[i].name + "'></option>");
+    }
 
 
 })
