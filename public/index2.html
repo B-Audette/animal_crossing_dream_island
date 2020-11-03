@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="data"></div>
+
+    <button id="add"> add villager</button>
+
+    <button id="view">view villagers</button>
+    
+</body>
+<script src="https://code.jquery.com/jquery.js"></script>
+
+<script>
+
+$.get("/api/all_villagers").then (function(data){
+    console.log(JSON.stringify(data));
+
+    //populate dropdown with list of villagers
+
+})
+
+$("#add").on("click", function(){
+    $.post("/api/villagers",{"name":"Kevin","dreamy":true})
+})
+
+$("#view").on("click", function(){
+    $.get("api/villagers", function(data){
+        console.log(data);
+    } )
+})
+
+</script>
+</html>

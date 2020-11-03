@@ -1,19 +1,47 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 
 //click event outline for search field
+// $(function() {
+//     $("#searchbtn").click(function(event) {
+//         event.preventDefault();
+    
+//         let searchedVillager = {
+//             name: $("#vi").val().trim()
+//         }
+//         console.log(searchedVillager)
+//         }
+//     );
+    
+// })
 $(function() {
-    $(".search-form").on("submit", function(event) {
-        event.preventDefault();
-        
-    })
+  $("#searchbtn").click((function(event) {
+  // Make sure to preventDefault on a submit event.
+  event.preventDefault();
+  let searchedVillager = {
+    name: $("#vi").val().trim()
+  }
 
+  $.ajax("/api/villagers", {
+    type: "GET",
+    data: searchedVillager
+  }).then(
+    function(err, res) {
+      if (err) {
+        console.log(err);
+      }
+      // Reload the page to get the updated list
+      console.log(res);
+      // location.reload();
+    });
+}))
+})
 
 $(function() {
     $(".change-dreamy").on("click", function(event) {
       let id = $(this).data("id");
       let newDreamy = $(this).data("newdreamy");
   
-      var newDreamyState = {
+      let newDreamyState = {
         dreamy: newDreamy
       };
   
@@ -68,4 +96,3 @@ $(function() {
       );
     });
 });
-  
