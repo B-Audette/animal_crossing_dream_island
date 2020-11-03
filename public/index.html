@@ -4,32 +4,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Welcome!</title>
 </head>
 
-<body>
+<body class="members">
 
-    <div id="data">
-        <form action="/api/oneVillager">
-            <input list="allVillagers" name="allVillagers" id="vi">
-            <datalist id="allVillagers">
-                <option value>
-
-            </datalist>
-            <input type="submit" id="searchbtn">
-        </form>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Welcome to Cozy Island</h1>
+        </div>
     </div>
 
-    <button id="addIsland"> add villager to island</button>
-    <button id="addDreamy"> add villager to dream list</button>
 
-    <button id="view">view villagers</button>
+    <div class="row">
+        <div class="col-2"></div>
+        <!-- search by name -->
+        <div class="col-2">
+            <div id="data">
+                <form action="/api/oneVillager">
+                    <input list="allVillagers" name="allVillagers" id="vi" placeholder="Villager Name">
+                    <datalist id="allVillagers">
+                        <option value>
+                    </datalist>
+                    <input type="submit" id="searchbtn">
+                </form>
+            </div>
+        </div>
 
-    <div id="stats"></div>
-    <div id="poster"></div>
-    <div id="house"></div>
+        <!-- search by species -->
+        <div class="col-2">
+            <div id="data">
+                <form action="/ki">
+                    <input list="allSpecies" name="allSpecies" id="as" placeholder="Species">
+                    <datalist id="allSpecies">
+                        <option value>
+
+                    </datalist>
+                    <input type="submit" id="searchbtn">
+                </form>
+            </div>
+        </div>
+
+        <!-- search by personality -->
+        <div class="col-2">
+            <div id="data">
+                <form action="/ki">
+                    <input list="allPerson" name="allPerson" id="ap" placeholder="Personality">
+                    <datalist id="allPerson">
+                        <option value>
+
+                    </datalist>
+                    <input type="submit" id="searchbtn">
+                </form>
+            </div>
+        </div>
+
+        <!-- search by hobby -->
+        <div class="col-2">
+            <div id="data">
+                <form action="/ki">
+                    <input list="allHobby" name="allHobby" id="ah" placeholder="Hobby">
+                    <datalist id="allHobby">
+                        <option value>
+
+                    </datalist>
+                    <input type="submit" id="searchbtn">
+                </form>
+            </div>
+        </div>
+
+        <div class="col-2"></div>
+    </div>
+
+    <div class="row villBttn">
+        <div class="col-7"></div>
+        <div class="col-5">
+            <button id="addIsland"> add villager to island</button>
+            <button id="addDreamy"> add villager to dream list</button>
+            <button id="view">view villagers</button>
+        </div>
+    </div>
+
+    <!-- Islander Info -->
+    <div class="row islander">
+
+        <div class="col-4">
+            <div class="row col-10 bio">
+                <h3>Islander</h3>
+                <div id="stats" class="row col-12">
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="col-2"></div>
+            </div>
+        </div>
+
+        <div class="col-4 photoImage">
+            <img id="poster" src="images/luna.png" alt="islander">
+        </div>
+
+        <div class="col-4 house">
+            <img id="house" src="./images/house.png" alt="house">
+        </div>
+
+    </div>
+
+    <div class="row lists">
+        <div class="dreamyList col-4">
+            <h3>Dreamy List</h3>
+            <div class="row col-12">
+                <ol>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ol>
+            </div>
+            <div class="row"></div>
+            <button type="button" class="btn btn-secondary">Move to my island</button>
+        </div>
+
+        <div class="col-2"></div>
+
+        <div class="myIsland col-4">
+            <h3>Currently on my island</h3>
+            <div class="row col-12">
+                <ol>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ol>
+            </div>
+            <div class="row"></div>
+            <button type="button" class="btn btn-secondary">Move off of my island</button>
+        </div>
+
+    </div>
+
+    <footer></footer>
 
 </body>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery.js"></script>
 
 <script>
@@ -48,23 +191,23 @@
         // Make sure to preventDefault on a submit event.
         event.preventDefault();
         let searchedVillager = $("#vi").val().trim()
-    
+
         console.log(searchedVillager)
 
-        $.get("/api/oneVillager/"+ searchedVillager 
+        $.get("/api/oneVillager/" + searchedVillager
         ).then(function (response) {
             console.log(response);
-            $("#stats").append(`<li>Name: ${response.name}</li>`, 
-            `<li>Species: ${response.species}</li>`,
-            `<li>Personality: ${response.personality}</li>`,
-            `<li>Hobby: ${response.hobby}</li>`,
-            `<li>Colors: ${response.colors}</li>`,
-            `<li>Catchphrase: ${response.catchphrase}</li>`,
-            `<li>Birthday: ${response.birthday}</li>`,
-            `<li>Favorite Song: ${response.favoriteSong}</li>`);
+            $("#stats").append(`<li>Name: ${response.name}</li>`,
+                `<li>Species: ${response.species}</li>`,
+                `<li>Personality: ${response.personality}</li>`,
+                `<li>Hobby: ${response.hobby}</li>`,
+                `<li>Colors: ${response.colors}</li>`,
+                `<li>Catchphrase: ${response.catchphrase}</li>`,
+                `<li>Birthday: ${response.birthday}</li>`,
+                `<li>Favorite Song: ${response.favoriteSong}</li>`);
             $("#poster").append(`<img src="${response.photoImage}"/>`)
             $("#house").append(`<img src="${response.houseImage}"/>`)
-            
+
         })
     })
     )
@@ -77,7 +220,7 @@
     // ********TODO add logic for click event?
     $("#addIsland").on("click", function () {
         $.post("/api/villagers", { "name": "Kevin", "dreamy": false })
-        
+
     })
     // *******TODO add logic for click event?
     $("#addDreamy").on("click", function () {

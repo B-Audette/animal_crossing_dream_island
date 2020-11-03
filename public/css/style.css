@@ -1,0 +1,36 @@
+body.members {
+    background-image: url("../images/dream.gif");
+    background-size: cover;
+}
+
+.jumbotron {
+    background-color: rgb(255, 240, 207, 0.5);
+}
+
+img {
+    margin-left: 25%;
+    margin-right: 25%;
+    max-height: 250px;
+}
+
+.islander {
+    background-color: rgb(210, 83, 234, 0.5);
+    margin: 2%;
+    padding: 2%;
+}
+
+.bio {
+    background-color: rgb(255, 240, 207);
+    padding-bottom: 1%;
+}
+
+.dreamyList {
+    background-color: rgb(255, 240, 207);
+    padding-bottom: 1%;
+    margin: 1%;
+}
+
+.myIsland {
+    background-color: rgb(255, 240, 207);
+    margin: 1%;
+}
