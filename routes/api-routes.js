@@ -100,7 +100,7 @@ module.exports = function (app) {
 
    // DELETE route for deleting posts
    app.delete("/api/villagers/:id", function(req, res) {
-    db.Post.destroy({
+    db.Villager.destroy({
       where: {
         id: req.params.id
       }

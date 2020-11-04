@@ -61,8 +61,10 @@
         $.post("/api/villagers", { "name": currentNameIsland, "dreamy": false })
             .then(function (response) {
                 console.log(response);
-                $("#onIsland").append(
-                    `<li class="island">${response.name}</li>`).append(`<button class="islandbtn">Move to Dreamy</button>`).append(`<button id="${response.id}"class="deletebtn">Delete</button>`)
+
+                let item = $(`<li id="island-${response.id}" class="dreamy">Name: ${response.name}</li>`).append(`<button class="dreamybtn">Move to my Island</button>`).append(`<button id="${response.id}" class="deletebtn">Delete</button>`)
+
+                $("#isDreamy").append(item)
 
             })
     })
@@ -79,7 +81,9 @@
             .then(function (response) {
                 console.log(response);
                 console.log(response.id)
-                $("#isDreamy").append(`<li class="dreamy">Name: ${response.name}</li>`).append(`<button class="dreamybtn">Move to my Island</button>`).append(`<button id="${response.id}" class="deletebtn">Delete</button>`)
+                let item = $(`<li id="dreamy-${response.id}" class="dreamy">Name: ${response.name}</li>`).append(`<button class="dreamybtn">Move to my Island</button>`).append(`<button id="${response.id}" class="deletebtn">Delete</button>`)
+
+                $("#isDreamy").append(item)
 
 
             })
@@ -106,7 +110,17 @@
         console.log("button was clicked");
         let id = $(this).attr("id");
         console.log(id);
-        //(... rest of your JS code)
+        $.ajax({
+            method: "DELETE",
+            url: "/api/villagers/" + id
+          })
+            .then(function() {
+              console.log("deleted villager")
+              $("#dreamy-"+ id).empty().remove();
+              $("#island-"+ id).empty().remove();
+              
+              // empty out the line???;
+            });
     });
 
     // set up the dreamy button click event
