@@ -82,6 +82,12 @@ img {
     margin-bottom: 13%;
 }
 
+input#searchbtn {
+    background-image: url("/public/images/leaf.png");
+    width: 35px;
+    height: 35px;
+}
+
 .bio {
     border-radius: 15px;
     background-color: rgb(255, 240, 207);
@@ -245,6 +251,11 @@ input {
 }
 
 .moveDreamy {
+    max-width: 20px;
+    margin-left: 0%;
+}
+
+.removeIcon {
     max-width: 20px;
     margin-left: 0%;
 }
