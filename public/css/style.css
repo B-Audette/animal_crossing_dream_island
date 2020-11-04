@@ -111,7 +111,6 @@ img {
 .dreamyList {
     border-radius: 15px;
     background-color: rgb(255, 240, 207);
-    padding-bottom: 1%;
 }
 
 .myIsland {
@@ -167,7 +166,85 @@ footer.login {
     height: 60px;
 }
 
+.leaf {
+    max-width: 35px;
+    margin-left: 0%;
+}
+
+.addDreamy {
+    max-width: 35px;
+    margin-left: 0%;
+}
+
+#addIsland {
+    border-radius: 8px;
+    background-color: rgb(15, 18, 63);
+    border-color: rgb(255, 240, 207);
+    cursor: pointer;
+    margin: 1%;
+    padding: 1%;
+    height: fit-content;
+}
+
+#addDreamy {
+    border-radius: 8px;
+    background-color: rgb(15, 18, 63);
+    border-color: rgb(255, 240, 207);
+    cursor: pointer;
+    margin: 1%;
+    padding: 1%;
+    height: fit-content;
+}
+
+.islandbtn {
+    border-radius: 8px;
+    background-color: rgb(50, 32, 105);
+    border-color: whitesmoke;
+    color: aliceblue;
+    cursor: pointer;
+    margin-right: 1%;
+    position: relative;
+    float: right;
+}
+
+.deletebtn {
+    border-radius: 8px;
+    background-color: rgb(50, 32, 105);
+    border-color: whitesmoke;
+    color: aliceblue;
+    cursor: pointer;
+    margin-left: 1%;
+    position: relative;
+    float: right;
+}
+
+.dreamybtn {
+    border-radius: 8px;
+    background-color: rgb(50, 32, 105);
+    border-color: whitesmoke;
+    color: aliceblue;
+    cursor: pointer;
+    margin-right: 1%;
+    position: relative;
+    float: right;
+}
+
+li{ 
+    height: 33px;
+    font-size: 18px;
+}
+
 input {
     height: 50px;
     border-radius: 8px;
+}
+
+.islandIcon {
+    max-width: 20px;
+    margin-left: 0%;
+}
+
+.moveDreamy {
+    max-width: 20px;
+    margin-left: 0%;
 }

@@ -61,8 +61,7 @@
         $.post("/api/villagers", { "name": currentNameIsland, "dreamy": false })
             .then(function (response) {
                 console.log(response);
-                $("#onIsland").append(
-                    `<li class="island">${response.name}</li>`).append(`<button class="islandbtn">Move to Dreamy</button>`).append(`<button class="deletebtn">Delete</button>`)
+                $("#onIsland").append(`<li class="island">${response.name}<button class="deletebtn"><i class="fa fa-times"></i></button><button class="islandbtn"><img class="moveDreamy" src="./images/dreamyIcon.png"></button></li>`)
 
             })
     })
@@ -78,7 +77,7 @@
         $.post("/api/villagers", { "name": currentNameIsland, "dreamy": true })
             .then(function (response) {
                 console.log(response);
-                $("#isDreamy").append(`<li class="dreamy">Name: ${response.name}</li>`).append(`<button class="dreamybtn">Move to my Island</button>`).append(`<button class="deletebtn">Delete</button>`)
+                $("#isDreamy").append(`<li class="dreamy">${response.name}<button class="deletebtn"><i class="fa fa-times"></i></button><button class="dreamybtn"><img class="islandIcon" src="./images/islandIcon.png"></button></li>`)
 
 
             })
