@@ -3,14 +3,75 @@ body.members {
     background-size: cover;
 }
 
+body.login {
+    background-image: url("../images/beachnight.jpg");
+    background-size: 100%;
+}
+
+body.signup {
+    background-image: url("../images/plane.png");
+    background-size: cover;
+}
+
+@font-face{
+    font-family: "finkHeavy";
+    src: url('./FinkHeavy.ttf');
+    }
+
+* {
+    font-family: FinkHeavy, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.loginHeader {
+    background-image: url("../images/star.gif");
+    color: aliceblue;
+    height: 190px;
+}
+
+.signupHeader {
+    color: rgb(128, 73, 41);
+    height: 190px;
+}
+
 .jumbotron {
     background-color: rgb(255, 240, 207, 0.5);
+}
+
+.row.login {
+    background-color: rgb(80, 78, 124, 0.8);
+    color: aliceblue;
+    width: fit-content;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.row.new {
+    background-color: rgb(80, 78, 124, 0.8);
+    color: aliceblue;
+    width: fit-content;
+    margin-left: 25%;
+    margin-right: 25%;
+    width: 500px;
+}
+
+.login a {
+    color: rgb(232, 188, 56);
+}
+
+.signUp a {
+    color: rgb(232, 188, 56);
+}
+
+
+button.btn.btn-default {
+    color: aliceblue;
 }
 
 img {
     margin-left: 25%;
     margin-right: 25%;
-    max-height: 250px;
+    max-height: 275px;
+    padding: 2%;
 }
 
 .islander {
@@ -20,17 +81,87 @@ img {
 }
 
 .bio {
+    border-radius: 15px;
     background-color: rgb(255, 240, 207);
     padding-bottom: 1%;
+}
+
+.lists {
+    margin: 2%;
+}
+
+#poster {
+    border-radius: 25px;
+    height: 255px;
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 9%, rgba(50,32,105,1) 50%);
+}
+
+#house {
+    border-radius: 50px;
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 20%, rgba(50,32,105,1) 80%);
 }
 
 .dreamyList {
+    border-radius: 15px;
     background-color: rgb(255, 240, 207);
     padding-bottom: 1%;
-    margin: 1%;
+    margin-bottom: 1%;
 }
 
 .myIsland {
+    border-radius: 15px;
     background-color: rgb(255, 240, 207);
+    margin-bottom: 1%;
+}
+
+.logo {
+    float: right;
+    height: 100px;
+}
+
+.twins{
+    max-height: 200px;
+}
+
+.orville{
+    max-height: 200px;
+}
+
+footer {
+    background-color: rgb(50, 32, 105);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+footer.login {
+    background-color: unset;
+}
+
+.celeste {
+    height: 200px;
+}
+
+.tomnook {
+    height: 250px;
+}
+
+.isabelle {
+    height: 250px;
+}
+
+.btn {
+    border-radius: 8px;
+    background-color: rgb(50, 32, 105);
+    border-color: whitesmoke;
+    cursor: pointer;
     margin: 1%;
+}
+
+input {
+    height: 50px;
+    border-radius: 8px;
 }
