@@ -62,7 +62,7 @@
             .then(function (response) {
                 console.log(response);
                 $("#onIsland").append(
-                    `<li class="island">${response.name}</li>`).append(`<button class="islandbtn">Move to Dreamy</button>`).append(`<button class="deletebtn">Delete</button>`)
+                    `<li class="island">${response.name}</li>`).append(`<button class="islandbtn">Move to Dreamy</button>`).append(`<button id="deletebtn" class="deletebtn">Delete</button>`)
 
             })
     })
@@ -78,12 +78,49 @@
         $.post("/api/villagers", { "name": currentNameIsland, "dreamy": true })
             .then(function (response) {
                 console.log(response);
-                $("#isDreamy").append(`<li class="dreamy">Name: ${response.name}</li>`).append(`<button class="dreamybtn">Move to my Island</button>`).append(`<button class="deletebtn">Delete</button>`)
+                console.log(response.id)
+                $("#isDreamy").append(`<li class="dreamy">Name: ${response.name}</li>`).append(`<button class="dreamybtn">Move to my Island</button>`).append(`<button id="${response.id}" class="deletebtn">Delete</button>`)
 
 
             })
     })
     )
+
+    
+
+    // $(".deletebtn").on("click", function (event) {
+    //     event.preventDefault();
+
+    //     console.log("button was clicked")
+    //     let id = $(this).attr("id")
+    //     console.log(id)
+    //     // $.destroy("/api/villagers/:id", id
+        
+
+    
+    // })
+
+    // set up the delete button click event
+    $(".deletebtn").on('click', function(event){
+        event.preventDefault();
+        console.log("button was clicked")
+        //(... rest of your JS code)
+    });
+
+    // set up the dreamy button click event
+    $(".dreamybtn").on('click', function(event){
+        event.preventDefault();
+        console.log("button was clicked")
+        //(... rest of your JS code)
+    });
+
+    // set up the island button click event
+    $(".islandbtn").on('click', function(event){
+        event.preventDefault();
+        console.log("button was clicked")
+        //(... rest of your JS code)
+    });
+
 
     //================================================================
 
