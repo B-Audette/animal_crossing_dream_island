@@ -62,7 +62,7 @@
             .then(function (response) {
                 console.log(response);
                 $("#onIsland").append(
-                    `<li class="island">${response.name}</li>`).append(`<button class="islandbtn">Move to Dreamy</button>`).append(`<button id="deletebtn" class="deletebtn">Delete</button>`)
+                    `<li class="island">${response.name}</li>`).append(`<button class="islandbtn">Move to Dreamy</button>`).append(`<button id="${response.id}"class="deletebtn">Delete</button>`)
 
             })
     })
@@ -103,7 +103,9 @@
     // set up the delete button click event
     $(document).on('click', ".deletebtn", function(event){
         event.preventDefault();
-        console.log("button was clicked")
+        console.log("button was clicked");
+        let id = $(this).attr("id");
+        console.log(id);
         //(... rest of your JS code)
     });
 
