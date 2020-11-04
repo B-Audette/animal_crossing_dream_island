@@ -100,7 +100,7 @@ module.exports = function (app) {
 
    // DELETE route for deleting posts
    app.delete("/api/villagers/:id", function(req, res) {
-    db.Post.destroy({
+    db.Villager.destroy({
       where: {
         id: req.params.id
       }
@@ -109,4 +109,46 @@ module.exports = function (app) {
         res.json(dbVillager);
       });
   });
+
+     // UPDATE/PUT route for deleting posts
+
+    //  app.put("/api/villagers/:id", function(req, res) {
+    //   db.Villager.update(
+    //     {name: req.params.name,
+    //       dreamy: 0},
+    
+    //     {
+    //       where: {
+    //         id: req.params.id
+    //       }
+    //     }).then(function(dbVillager) {
+    //       let testVillager = ("test villager")
+    //     res.json(testVillager)
+    //   });
+    // })
+
+    app.put("/api/villagers/:id", function(req, res) {
+      let id = req.params.id
+      db.Villager.update(
+   
+        {dreamy: 0},
+        {
+          where: {
+            id: req.params.id,
+           
+          },
+          
+        }).then(function() {
+          db.Villager.findOne(
+            {
+              where: {
+                id: id
+            }
+          }
+          )
+          .then(function (dbVillager) {
+            res.json(dbVillager);
+          });
+      });
+    });
 };

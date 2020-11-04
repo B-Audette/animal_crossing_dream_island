@@ -61,7 +61,13 @@
         $.post("/api/villagers", { "name": currentNameIsland, "dreamy": false })
             .then(function (response) {
                 console.log(response);
-                $("#onIsland").append(`<li class="island">${response.name}<button class="deletebtn"><i class="fa fa-times"></i></button><button class="islandbtn"><img class="moveDreamy" src="./images/dreamyIcon.png"></button></li>`)
+
+                let item = (`<li id="island-${response.id}" class="island"name="${response.name}">${response.name}<button id="${response.id}"  class="deletebtn">Delete <img class="removeIcon" src="./images/deleteIcon.png"></button><button id="${response.id}" name="${response.name}" class="islandbtn">Move to Dreamy <img class="moveDreamy" src="./images/dreamyIcon.png"></button></li>`)
+                
+                
+                // $(`<li id="island-${response.id}" class="island" name="${response.name}">Name: ${response.name}</li>`).append(`<button "changeToDreamy-${response.id}" class="islandbtn">Move to Dream List</button>`).append(`<button id="${response.id}" class="deletebtn">Delete</button>`)
+
+                $("#onIsland").append(item)
 
             })
     })
@@ -70,19 +76,107 @@
     $("#addDreamy").click((function (event) {
         // Make sure to preventDefault on a submit event.
         event.preventDefault();
-        let currentNameIsland = $("#currentName").text().slice(6)
+        let currentNameIsland = $("#currentName").text()
 
         console.log(currentNameIsland)
 
         $.post("/api/villagers", { "name": currentNameIsland, "dreamy": true })
             .then(function (response) {
                 console.log(response);
-                $("#isDreamy").append(`<li class="dreamy">${response.name}<button class="deletebtn"><i class="fa fa-times"></i></button><button class="dreamybtn"><img class="islandIcon" src="./images/islandIcon.png"></button></li>`)
+                console.log(response.id)
+                let item = (`<li id="dreamy-${response.id}" class="dreamy"name="${response.name}">${response.name}<button id="${response.id}"  class="deletebtn">Delete <img class="removeIcon" src="./images/deleteIcon.png"></button><button id="${response.id}" name="${response.name}" class="dreamybtn">Move to Island <img class="islandIcon" src="./images/islandIcon.png"></button></li>`)
+                
+                
+                $("#isDreamy").append(item)
 
 
             })
     })
     )
+
+    
+
+    // $(".deletebtn").on("click", function (event) {
+    //     event.preventDefault();
+
+    //     console.log("button was clicked")
+    //     let id = $(this).attr("id")
+    //     console.log(id)
+    //     // $.destroy("/api/villagers/:id", id
+        
+
+    
+    // })
+
+    // set up the delete button click event
+    $(document).on('click', ".deletebtn", function(event){
+        event.preventDefault();
+        console.log("button was clicked");
+        let id = $(this).attr("id");
+        console.log(id);
+        $.ajax({
+            method: "DELETE",
+            url: "/api/villagers/" + id
+          })
+            .then(function() {
+              console.log("deleted villager")
+              $("#dreamy-"+ id).empty().remove();
+              $("#island-"+ id).empty().remove();
+              
+              // empty out the line???;
+            });
+    });
+
+    // set up the dreamy button click event to move to island
+    $(document).on('click', ".dreamybtn", function(event){
+        event.preventDefault();
+        console.log("button was clicked to move villager to island")
+        let id = $(this).attr("id");
+        console.log(id);
+        // let dreamy = $(this).attr("dreamy")
+        // console.log(dreamy)
+        let name = $(this).attr("name")
+        console.log(name)
+        $.ajax({
+            method: "PUT",
+            url: "/api/villagers/" + id
+          })
+            .then(function(data) {
+              console.log("changed dreamy villager")
+              console.log(data)
+            //   $("#dreamy-"+ id).empty().remove();
+            //   $("#island-"+ id).empty().remove();
+              
+              // empty out the line???;
+            });
+        //(... rest of your JS code)
+    });
+
+    // set up the island button click event
+    $(document).on('click', ".islandbtn", function(event){
+        event.preventDefault();
+        console.log("button was clicked to move villager to dreamy")
+        let id = $(this).attr("id");
+        console.log(id);
+        // let dreamy = $(this).attr("dreamy")
+        // console.log(dreamy)
+        let name = $(this).attr("name")
+        console.log(name)
+        $.ajax({
+            method: "PUT",
+            url: "/api/villagers/" + id
+          })
+            .then(function(data) {
+              console.log("changed from island to dreamy villager")
+              console.log(data)
+            //   $("#dreamy-"+ id).empty().remove();
+            //   $("#island-"+ id).empty().remove();
+              
+              // empty out the line???;
+            });
+        //(... rest of your JS code)
+    });
+
 
     //================================================================
 
