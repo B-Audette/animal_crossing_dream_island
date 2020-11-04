@@ -24,6 +24,7 @@ module.exports = function (app) {
   app.post("/api/villagers", function (req, res) {
     db.Villager.create(req.body)
       .then(function () {
+        res.json(req.body)
         res.status(200).end();
       });
   });

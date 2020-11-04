@@ -121,17 +121,7 @@
         <div class="dreamyList col-4">
             <h3>Dreamy List</h3>
             <div class="row col-12">
-                <ol>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                <ol id="isDreamy">
                 </ol>
             </div>
             <div class="row"></div>
@@ -143,17 +133,7 @@
         <div class="myIsland col-4">
             <h3>Currently on my island</h3>
             <div class="row col-12">
-                <ol>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                <ol id="onIsland">
                 </ol>
             </div>
             <div class="row"></div>
@@ -200,6 +180,9 @@
     $("#searchbtn").click((function (event) {
         // Make sure to preventDefault on a submit event.
         event.preventDefault();
+        $("#stats").empty();
+        $("#poster").empty();
+        $("#house").empty();
         let searchedVillager = $("#vi").val().trim()
 
         console.log(searchedVillager)
@@ -225,6 +208,7 @@
             $("#poster").append(`<img src="${response.photoImage}"/>`)
             $("#house").append(`<img src="${response.houseImage}"/>`)
 
+
         })
     })
     )
@@ -241,7 +225,8 @@
         $.post("/api/villagers", { "name": currentNameIsland, "dreamy": false })
         .then(function (response) {
             console.log(response);
-            // $("#stats").append(`<li id="island">Name: ${currentNameIsland}</li>`)
+            $("#onIsland").append(`<li class="island">${response.name}</li>`)
+            
         })
     })
     )
@@ -256,6 +241,7 @@
         $.post("/api/villagers", { "name": currentNameIsland, "dreamy": true })
         .then(function (response) {
             console.log(response);
+            $("#isDreamy").append(`<li class="dreamy>Name: ${response.name}</li>`)
 
           
         })
