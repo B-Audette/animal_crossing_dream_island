@@ -242,7 +242,7 @@
         $.post("/api/villagers", { "name": currentNameIsland, "dreamy": true })
         .then(function (response) {
             console.log(response);
-            $("#isDreamy").append(`<li class="dreamy">Name: ${response.name}</li>`)
+            $("#isDreamy").append(`<li class="dreamy">Name: ${response.name}</li>`).append(`<button class="dreamybtn">Move to my Island</button>`).append(`<button class="deletebtn">Delete</button>`)
 
           
         })
