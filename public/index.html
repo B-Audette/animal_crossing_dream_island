@@ -166,7 +166,7 @@
 <script src="https://code.jquery.com/jquery.js"></script>
 
 <script>
-    // pulls villagers to dropdown
+    // pulls villagers to dropdown search
     $.get("/api/all_villagers").then(function (data) {
         for (i = 0; i < data.length; i++) {
             $("#allVillagers").append("<option value='" +
@@ -225,7 +225,8 @@
         $.post("/api/villagers", { "name": currentNameIsland, "dreamy": false })
         .then(function (response) {
             console.log(response);
-            $("#onIsland").append(`<li class="island">${response.name}</li>`)
+            $("#onIsland").append(
+                `<li class="island">${response.name}</li>`).append(`<button class="islandbtn">Move to Dreamy</button>`).append(`<button class="deletebtn">Delete</button>`)
             
         })
     })
@@ -241,7 +242,7 @@
         $.post("/api/villagers", { "name": currentNameIsland, "dreamy": true })
         .then(function (response) {
             console.log(response);
-            $("#isDreamy").append(`<li class="dreamy>Name: ${response.name}</li>`)
+            $("#isDreamy").append(`<li class="dreamy">Name: ${response.name}</li>`)
 
           
         })

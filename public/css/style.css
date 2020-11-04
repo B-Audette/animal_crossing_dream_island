@@ -15,7 +15,7 @@ body.signup {
 
 @font-face{
     font-family: "finkHeavy";
-    src: url('./FinkHeavy.ttf');
+    src: url('./FinkHeavy.woff');
     }
 
 * {

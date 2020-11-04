@@ -25,6 +25,7 @@ module.exports = function (app) {
     db.Villager.create(req.body)
       .then(function () {
         res.json(req.body)
+        
         res.status(200).end();
       });
   });
@@ -51,4 +52,16 @@ module.exports = function (app) {
     res.json(currentVillager);
 
   })
+
+   // DELETE route for deleting posts
+   app.delete("/api/villagers/:id", function(req, res) {
+    db.Post.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+      .then(function(dbVillager) {
+        res.json(dbVillager);
+      });
+  });
 };
