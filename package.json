@@ -1,19 +1,35 @@
 {
-  "name": "namehere",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "development": {
+    "username": "root",
+    "password": "root",
+    "database": "acnhvillagers_db",
+    "host": "127.0.0.1",
+    "port": 3306,
+    "dialect": "mysql"
   },
-  "author": "",
-  "license": "ISC",
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "port": 3306,
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "port": 3306,
+    "dialect": "mysql"
+  },
   "dependencies": {
     "animal-crossing": "^6.10.0",
+    "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
-    "express-handlebars": "^5.2.0",
-    "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
     "sequelize": "^6.3.5"
   }
 }

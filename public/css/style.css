@@ -15,7 +15,7 @@ body.signup {
 
 @font-face{
     font-family: "finkHeavy";
-    src: url('./FinkHeavy.ttf');
+    src: url('./FinkHeavy.woff');
     }
 
 * {
@@ -135,6 +135,7 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
+    margin-top: auto;
 }
 
 footer.login {
@@ -159,6 +160,7 @@ footer.login {
     border-color: whitesmoke;
     cursor: pointer;
     margin: 1%;
+    height: 60px;
 }
 
 input {

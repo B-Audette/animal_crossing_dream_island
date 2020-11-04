@@ -101,11 +101,6 @@
                 <h3>Islander</h3>
                 <div id="stats" class="row col-12">
                     <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
                     </ul>
                 </div>
                 <div class="col-2"></div>
@@ -172,10 +167,15 @@
             <div class="col-3">
                 <img class="twins" src="./images/timmytommy.png" alt="twins">
             </div>
-            <div class="col-6"></div>
+            <div class="col-5"></div>
             <div class="col-3">
                 <img class="orville" src="./images/orville.png" alt="orville">
             </div>
+            <div class="col-1">
+                <a class="navbar-brand" href="/logout">
+                  Logout
+                </a>
+              </div>
         </div>
     </footer>
 
@@ -197,8 +197,6 @@
             $("#allVillagers").append("<option value='" +
                 data[i].name + "'></option>");
         }
-
-
     })
 
     //========pulls villlager data from submit button & writes to page elements #stats/#poster/#house
