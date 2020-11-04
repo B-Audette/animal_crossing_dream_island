@@ -101,21 +101,21 @@
     // })
 
     // set up the delete button click event
-    $(".deletebtn").on('click', function(event){
+    $(document).on('click', ".deletebtn", function(event){
         event.preventDefault();
         console.log("button was clicked")
         //(... rest of your JS code)
     });
 
     // set up the dreamy button click event
-    $(".dreamybtn").on('click', function(event){
+    $(document).on('click', ".dreamybtn", function(event){
         event.preventDefault();
         console.log("button was clicked")
         //(... rest of your JS code)
     });
 
     // set up the island button click event
-    $(".islandbtn").on('click', function(event){
+    $(document).on('click', ".islandbtn", function(event){
         event.preventDefault();
         console.log("button was clicked")
         //(... rest of your JS code)
