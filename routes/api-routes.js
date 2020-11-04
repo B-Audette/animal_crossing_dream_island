@@ -31,8 +31,8 @@ module.exports = function (app) {
   // otherwise send back an error
   app.post("/api/signup", function(req, res) {
     db.User.create({
-      dodo: req.body.dodo,
-      password: req.body.password
+      islandName: req.body.islandName,
+      dodo: req.body.dodo
     })
       .then(function() {
         res.redirect(307, "/api/login");
@@ -47,9 +47,12 @@ module.exports = function (app) {
     req.logout();
     res.redirect("/");
   });
+
   app.post("/api/villagers", function (req, res) {
     db.Villager.create(req.body)
       .then(function () {
+        res.json(req.body)
+        
         res.status(200).end();
       });
   });
@@ -63,7 +66,7 @@ module.exports = function (app) {
         // Otherwise send back the user's email and id
         // Sending back a password, even a hashed password, isn't a good idea
         res.json({
-          email: req.user.email,
+          islandName: req.user.islandName,
           id: req.user.id
         });
       }
@@ -91,4 +94,16 @@ module.exports = function (app) {
     res.json(currentVillager);
 
   })
+
+   // DELETE route for deleting posts
+   app.delete("/api/villagers/:id", function(req, res) {
+    db.Post.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+      .then(function(dbVillager) {
+        res.json(dbVillager);
+      });
+  });
 };

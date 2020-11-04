@@ -68,10 +68,10 @@ button.btn.btn-default {
 }
 
 img {
-    margin-left: 25%;
-    margin-right: 25%;
+    margin: 2%;
     max-height: 275px;
     padding: 2%;
+    margin-left: 15%;
 }
 
 .islander {
@@ -92,28 +92,29 @@ img {
 
 #poster {
     border-radius: 25px;
-    height: 255px;
     background: rgb(255,255,255);
-    background: radial-gradient(circle, rgba(255,255,255,1) 9%, rgba(50,32,105,1) 50%);
+    background: radial-gradient(circle, rgba(255,255,255,1) 20%, rgba(50,32,105,1) 80%);
+    height: fit-content;
 }
 
 #house {
     border-radius: 50px;
     background: rgb(255,255,255);
     background: radial-gradient(circle, rgba(255,255,255,1) 20%, rgba(50,32,105,1) 80%);
+    height: fit-content;
 }
 
 .dreamyList {
     border-radius: 15px;
     background-color: rgb(255, 240, 207);
     padding-bottom: 1%;
-    margin-bottom: 1%;
+    margin-bottom: 11%;
 }
 
 .myIsland {
     border-radius: 15px;
     background-color: rgb(255, 240, 207);
-    margin-bottom: 1%;
+    margin-bottom: 11%;
 }
 
 .logo {
@@ -135,7 +136,8 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
-    margin-top: auto;
+    margin-top: 2%;
+    height: 200px;
 }
 
 footer.login {

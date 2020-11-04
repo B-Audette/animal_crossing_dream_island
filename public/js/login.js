@@ -4,7 +4,7 @@ $(document).ready(function() {
     var islandNameInput = $("input#islandName-input");
     var dodoInput = $("input#dodo-input");
   
-    // When the form is submitted, we validate there's an email and password entered
+    // When the form is submitted, we validate there's an island name and dodo code entered
     loginForm.on("submit", function(event) {
       event.preventDefault();
       var userData = {
@@ -16,7 +16,7 @@ $(document).ready(function() {
         return;
       }
   
-      // If we have an email and password we run the loginUser function and clear the form
+      // If we have an island name and dodo code we run the loginUser function and clear the form
       loginUser(userData.islandName, userData.dodo);
       islandNameInput.val("");
       dodoInput.val("");
