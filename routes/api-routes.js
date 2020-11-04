@@ -26,6 +26,16 @@ module.exports = function (app) {
       });
   });
 
+  app.post("/api/villagers", function (req, res) {
+    db.Villager.create(req.body)
+      .then(function (data) {
+        req.body.id=(data.dataValues.id)
+        res.json(req.body)
+        
+        res.status(200).end();
+      });
+  });
+
  // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
@@ -48,14 +58,7 @@ module.exports = function (app) {
     res.redirect("/");
   });
 
-  app.post("/api/villagers", function (req, res) {
-    db.Villager.create(req.body)
-      .then(function () {
-        res.json(req.body)
-        
-        res.status(200).end();
-      });
-  });
+
 
     // Route for getting some data about our user to be used client side
     app.get("/api/user_data", function(req, res) {

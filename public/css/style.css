@@ -74,10 +74,12 @@ img {
     margin-left: 15%;
 }
 
-.islander {
-    background-color: rgb(210, 83, 234, 0.5);
+.searchReturn {
+    border-radius: 10px;
+    background-color: rgb(210, 83, 234, 0.8);
     margin: 2%;
     padding: 2%;
+    margin-bottom: 13%;
 }
 
 .bio {
@@ -92,15 +94,17 @@ img {
 
 #poster {
     border-radius: 25px;
-    background: rgb(255,255,255);
-    background: radial-gradient(circle, rgba(255,255,255,1) 20%, rgba(50,32,105,1) 80%);
+    background-image: url(../images/blueSky.gif);
+    /* background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 20%, rgba(50,32,105,1) 80%); */
     height: fit-content;
 }
 
 #house {
     border-radius: 50px;
-    background: rgb(255,255,255);
-    background: radial-gradient(circle, rgba(255,255,255,1) 20%, rgba(50,32,105,1) 80%);
+    background-image: url(../images/blueSky.gif);
+    /* background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 20%, rgba(50,32,105,1) 80%); */
     height: fit-content;
 }
 
@@ -108,13 +112,11 @@ img {
     border-radius: 15px;
     background-color: rgb(255, 240, 207);
     padding-bottom: 1%;
-    margin-bottom: 11%;
 }
 
 .myIsland {
     border-radius: 15px;
     background-color: rgb(255, 240, 207);
-    margin-bottom: 11%;
 }
 
 .logo {

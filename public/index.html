@@ -94,52 +94,53 @@
     </div>
 
     <!-- Islander Info -->
-    <div class="row islander">
+    <div class="searchReturn">
+        <div class="row islander">
 
-        <div class="col-4">
-            <div class="row col-10 bio">
-                <h3>Islander</h3>
-                <div id="stats" class="row col-12">
-                    <ul>
-                    </ul>
+            <div class="col-4">
+                <div class="row col-10 bio">
+                    <h3>Islander</h3>
+                    <div id="stats" class="row col-12">
+                        <ul>
+                        </ul>
+                    </div>
+                    <div class="col-1"></div>
                 </div>
-                <div class="col-1"></div>
+            </div>
+
+            <div id="poster" class="col-3">
+                <!-- <img id="poster" src="images/luna.png" alt="islander"> -->
+            </div>
+            <div class="col-2"></div>
+            <div id="house" class="col-3">
+                <!-- <img id="house" src="./images/house.png" alt="house"> -->
+            </div>
+
+        </div>
+
+        <div class="row lists">
+            <div class="dreamyList col-4">
+                <h3>Dreamy List</h3>
+                <div class="row col-12">
+                    <ol id="isDreamy">
+                    </ol>
+                </div>
+                <div class="row"></div>
+                <button type="button" class="btn btn-secondary">Move to my island</button>
+            </div>
+
+            <div class="col-4"></div>
+
+            <div class="myIsland col-4">
+                <h3>Currently on my island</h3>
+                <div class="row col-12">
+                    <ol id="onIsland">
+                    </ol>
+                </div>
+                <div class="row"></div>
+                <button type="button" class="btn btn-secondary">Move off of my island</button>
             </div>
         </div>
-
-        <div id="poster" class="col-3 photoImage">
-            <!-- <img id="poster" src="images/luna.png" alt="islander"> -->
-        </div>
-        <div class="col-2"></div>
-        <div id ="house">
-            <!-- <img id="house" src="./images/house.png" alt="house"> -->
-        </div>
-
-    </div>
-
-    <div class="row lists">
-        <div class="dreamyList col-4">
-            <h3>Dreamy List</h3>
-            <div class="row col-12">
-                <ol id="isDreamy">
-                </ol>
-            </div>
-            <div class="row"></div>
-            <button type="button" class="btn btn-secondary">Move to my island</button>
-        </div>
-
-        <div class="col-4"></div>
-
-        <div class="myIsland col-4">
-            <h3>Currently on my island</h3>
-            <div class="row col-12">
-                <ol id="onIsland">
-                </ol>
-            </div>
-            <div class="row"></div>
-            <button type="button" class="btn btn-secondary">Move off of my island</button>
-        </div>
-
     </div>
 
     <footer>
@@ -153,9 +154,9 @@
             </div>
             <div class="col-1">
                 <a class="navbar-brand" href="/logout">
-                  Logout
+                    Logout
                 </a>
-              </div>
+            </div>
         </div>
     </footer>
 
@@ -216,22 +217,22 @@
     })
     )
 
-        // addIsland and addDreamy adds villager to our database -
+    // addIsland and addDreamy adds villager to our database -
 
     $("#addIsland").click((function (event) {
         // Make sure to preventDefault on a submit event.
         event.preventDefault();
         let currentNameIsland = $("#currentName").text().slice(6)
-    
+
         console.log(currentNameIsland)
 
         $.post("/api/villagers", { "name": currentNameIsland, "dreamy": false })
-        .then(function (response) {
-            console.log(response);
-            $("#onIsland").append(
-                `<li class="island">${response.name}</li>`).append(`<button class="islandbtn">Move to Dreamy</button>`).append(`<button class="deletebtn">Delete</button>`)
-            
-        })
+            .then(function (response) {
+                console.log(response);
+                $("#onIsland").append(
+                    `<li class="island">${response.name}</li>`).append(`<button class="islandbtn">Move to Dreamy</button>`).append(`<button class="deletebtn">Delete</button>`)
+
+            })
     })
     )
 
@@ -239,16 +240,16 @@
         // Make sure to preventDefault on a submit event.
         event.preventDefault();
         let currentNameIsland = $("#currentName").text().slice(6)
-    
+
         console.log(currentNameIsland)
 
         $.post("/api/villagers", { "name": currentNameIsland, "dreamy": true })
-        .then(function (response) {
-            console.log(response);
-            $("#isDreamy").append(`<li class="dreamy">Name: ${response.name}</li>`).append(`<button class="dreamybtn">Move to my Island</button>`).append(`<button class="deletebtn">Delete</button>`)
+            .then(function (response) {
+                console.log(response);
+                $("#isDreamy").append(`<li class="dreamy">Name: ${response.name}</li>`).append(`<button class="dreamybtn">Move to my Island</button>`).append(`<button class="deletebtn">Delete</button>`)
 
-          
-        })
+
+            })
     })
     )
 
@@ -263,7 +264,7 @@
 
     // })
 
-  // ===== Demo Post Basic Functions ======
+    // ===== Demo Post Basic Functions ======
     // $("#addDreamy").on("click", function () {
     //     $.post("/api/villagers", { "name": "Kevin", "dreamy": true })
 
