@@ -62,9 +62,9 @@
             .then(function (response) {
                 console.log(response);
 
-                let item = $(`<li id="island-${response.id}" class="dreamy">Name: ${response.name}</li>`).append(`<button class="dreamybtn">Move to my Island</button>`).append(`<button id="${response.id}" class="deletebtn">Delete</button>`)
+                let item = $(`<li id="island-${response.id}" class="island">Name: ${response.name}</li>`).append(`<button class="islandbtn">Move to Dream List</button>`).append(`<button id="${response.id}" class="deletebtn">Delete</button>`)
 
-                $("#isDreamy").append(item)
+                $("#onIsland").append(item)
 
             })
     })
