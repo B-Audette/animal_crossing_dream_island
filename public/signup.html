@@ -11,19 +11,16 @@
 </head>
 
 <body class="signup">
-
     <div class="signupHeader jumbotron jumbotron-fluid ">
         <div class="row">
             <div class="container col-4">
-                <h1 class="display-4">Sign up</h1>
-                <p class="lead">Enter Your Island Name.</p>
+                <p class="display-4">I suppose we can't call this a deserted island anymore, hm? But what SHOULD we call it...</p>
             </div>
             <div class="col-3">
                 <img class="logo" src="./images/logo.png" alt="logo">
             </div>
         </div>
     </div>
-
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -37,26 +34,25 @@
                 <form class="signup">
                     <div class="form-group">
                         <label for="exampleInputIslandName1">Island Name</label>
-                        <input name="islandName" class="form-control" id="islandName-input" placeholder="Island Name">
+                        <input type="islandName" class="form-control" id="islandName-input" placeholder="Island Name">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputDodo1">Dodo Code</label>
-                        <input name="dodo" class="form-control" id="dodo-input" placeholder="Dodo Code">
+                        <input type="dodo" class="form-control" id="dodo-input" placeholder="Dodo Code">
                     </div>
                     <div style="display: none" id="alert" class="alert alert-danger" role="alert">
                         <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                         <span class="sr-only">Error:</span> <span class="msg"></span>
                     </div>
-                    <button id="signupBtn" class="btn btn-default">Sign Up</button>
+                    <button type="submit" class="btn btn-default" id="signupBtn">Sign Up</button>
                 </form>
                 <br />
                 <p>Or log in <a href="/login">here</a></p>
             </div>
         </div>
     </div>
-
-    <body class="login">
-        <footer class="login">
+    <body class="signUp">
+        <footer class="signUp">
             <div class="row">
                 <div class="col-3">
                     <img class="tomnook" src="./images/tomnook.png" alt="tomnook">
@@ -66,10 +62,8 @@
                     <img class="isabelle" src="./images/isabelle.png" alt="isabelle">
                 </div>
             </div>
-        </footer>
-
+        </footer>   
     </body>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
