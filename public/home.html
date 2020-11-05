@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,9 +9,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <title>Welcome!</title>
 </head>
-
 <body class="members">
-
     <div class="jumbotron jumbotron-fluid ">
         <div class="row">
             <div class="container col-4">
@@ -23,12 +20,9 @@
             </div>
         </div>
     </div>
-
-
     <div class="row">
-        <div class="col-2"></div>
         <!-- search by name -->
-        <div class="col-2">
+        <div class="col-12">
             <div id="data">
                 <form action="/api/oneVillager">
                     <input list="allVillagers" name="allVillagers" id="vi" placeholder="Villager Name">
@@ -39,88 +33,39 @@
                 </form>
             </div>
         </div>
-
-        <!-- search by species -->
-        <div class="col-2">
-            <div id="data">
-                <form action="/ki">
-                    <input list="allSpecies" name="allSpecies" id="as" placeholder="Species">
-                    <datalist id="allSpecies">
-                        <option value>
-
-                    </datalist>
-                    <input type="submit" id="searchbtn" class="btn btn-secondary">
-                </form>
+        <div class="row villBttn">
+            <div class="col-1"></div>
+            <div class="col-lg-5 col-md-5 col-sm-12">
+                <h5>Add to Dreamy List<button id="addDreamy" class="btn btn-secondary"><img class="addDreamy" alt="add to dreamy" src="./images/dreamyIcon.png"></button></h5>
             </div>
-        </div>
-
-        <!-- search by personality -->
-        <div class="col-2">
-            <div id="data">
-                <form action="/ki">
-                    <input list="allPerson" name="allPerson" id="ap" placeholder="Personality">
-                    <datalist id="allPerson">
-                        <option value>
-
-                    </datalist>
-                    <input type="submit" id="searchbtn" class="btn btn-secondary">
-                </form>
+            <div class="col-2"></div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <h5>Add to Island<button id="addIsland" class="btn btn-secondary"><img class="leaf" alt="add to island"
+                            src="./images/islandIcon.png"></button></h5>
             </div>
-        </div>
-
-        <!-- search by hobby -->
-        <div class="col-2">
-            <div id="data">
-                <form action="/ki">
-                    <input list="allHobby" name="allHobby" id="ah" placeholder="Hobby">
-                    <datalist id="allHobby">
-                        <option value>
-
-                    </datalist>
-                    <input type="submit" id="searchbtn" class="btn btn-secondary">
-                </form>
-            </div>
-        </div>
-
-        <div class="col-2"></div>
-    </div>
-
-    <div class="row villBttn">
-        <div class="col-7"></div>
-        <div class="col-5">
-            <button id="addDreamy" class="btn btn-secondary"><img class="addDreamy" alt="add to dreamy" src="./images/dreamyIcon.png"></button>
-            <button id="addIsland" class="btn btn-secondary"> <img class="leaf" alt="add to island" src="./images/islandIcon.png"></button>
-            <!-- <button id="view" class="btn btn-secondary">View villagers</button> -->
         </div>
     </div>
-
     <!-- Islander Info -->
     <div class="searchReturn">
         <div class="row islander">
-
-            <div class="col-4">
-                <div class="row col-10 bio">
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="row bio">
                     <h3>Islander</h3>
                     <div id="stats" class="row col-12">
                         <ul>
                         </ul>
                     </div>
-                    <div class="col-1"></div>
                 </div>
             </div>
-
-            <div id="poster" class="col-3">
-                <!-- <img id="poster" src="images/luna.png" alt="islander"> -->
-            </div>
-            <div class="col-2"></div>
-            <div id="house" class="col-3">
-                <!-- <img id="house" src="./images/house.png" alt="house"> -->
-            </div>
-
+            <div class="col-2 col-lg-1"></div>
+            <div id="poster" class="col-lg-2 col-md-2 col-sm-6"></div>
+            <div class="col-2 col-lg-1"></div>
+            <div class="col-2 col-lg-1"></div>
+            <div id="house" class="col-lg-2 col-md-2 col-sm-6"></div>
+            <div class="col-2 col-lg-1"></div>
         </div>
-
         <div class="row lists">
-            <div class="dreamyList col-4">
+            <div class="dreamyList col-lg-4 col-md-4 col-sm-12">
                 <h3>Dreamy List</h3>
                 <div class="row">
                     <div class="col-12">
@@ -128,11 +73,9 @@
                         </ol>
                     </div>
                 </div>
-                <!-- <div class="row"></div>
-                <button type="button" class="btn btn-secondary">Move to my island</button> -->
             </div>
             <div class="col-4"></div>
-            <div class="myIsland col-4">
+            <div class="myIsland col-lg-4 col-md-4 col-sm-12">
                 <h3>Currently on my island</h3>
                 <div class="row">
                     <div class="col-12">
@@ -145,24 +88,13 @@
             </div>
         </div>
     </div>
-
     <footer>
-        <div class="row">
-            <div class="col-3">
-                <img class="twins" src="./images/timmytommy.png" alt="twins">
-            </div>
-            <div class="col-5"></div>
-            <div class="col-3">
-                <img class="orville" src="./images/orville.png" alt="orville">
-            </div>
-            <div class="col-1">
-                <a class="navbar-brand" href="/logout">
-                    Logout
-                </a>
-            </div>
-        </div>
+        <!-- <div class="row"> -->
+        <img class="twins" src="./images/timmytommy.png" alt="twins">
+        <img class="orville" src="./images/orville.png" alt="orville">
+        <a class="navbar-brand" href="/logout">Logout</a>
+        <!-- </div> -->
     </footer>
-
 </body>
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

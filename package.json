@@ -1,31 +1,27 @@
 {
-  "development": {
-    "username": "root",
-    "password": "root",
-    "database": "acnhvillagers_db",
-    "host": "127.0.0.1",
-    "port": 3306,
-    "dialect": "mysql"
+  "name": "team_charmeleon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
-  "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
-    "port": 3306,
-    "dialect": "mysql"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/B-Audette/team_charmeleon.git"
   },
-  "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "port": 3306,
-    "dialect": "mysql"
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/B-Audette/team_charmeleon/issues"
   },
+  "homepage": "https://github.com/B-Audette/team_charmeleon#readme",
   "dependencies": {
     "animal-crossing": "^6.10.0",
     "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.5",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "mysql2": "^2.2.5",

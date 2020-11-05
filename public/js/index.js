@@ -1,8 +1,9 @@
- // This file just does a GET request to figure out which user is logged in
+     // This file just does a GET request to figure out which user is logged in
     // and updates the HTML on the page
-    // $.get("/api/user_data").then(function(data) {
-    //   $(".member-name").text(data.islandName);
-    // });
+    $.get("/api/user_data").then(function(data) {
+        $(".islandName").text(data.islandName);
+      });
+
     // pulls villagers to dropdown search
     $.get("/api/all_villagers").then(function (data) {
         for (let i = 0; i < data.length; i++) {
@@ -64,7 +65,7 @@
             .then(function (response) {
                 console.log(response);
                 console.log(response.id)
-                let item = (`<li id="dreamy-${response.id}" class="dreamy"name="${response.name}">${response.name}<button id="${response.id}"  class="deletebtn">Delete <img class="removeIcon" src="./images/deleteIcon.png"></button><button id="${response.id}" name="${response.name}" class="dreamybtn">Move to Island <img class="islandIcon" src="./images/islandIcon.png"></button></li>`)
+                let item = (`<li id="dreamy-${response.id}" class="dreamy"name="${response.name}">${response.name}<button id="${response.id}"  class="deletebtn">Delete <img class="removeIcon" src="./images/deleteIcon.png"></button><button id="${response.id}" name="${response.name}" class="dreamybtn">Move<img class="islandIcon" src="./images/islandIcon.png"></button></li>`)
                 $("#isDreamy").append(item)
             })
     })
@@ -105,6 +106,14 @@
             $("#dreamy-"+ id).empty().remove();
             });
     });
+
+       //pulls in villagers in our database - add once passport is set up 
+       //to pull in where user matches user on page load
+       $("#view").on("click", function () {
+        $.get("api/villagers", function (data) {
+            console.log(data);
+        })
+    })
     //================================================================
     //pulls in villagers in our database
     $("#view").on("click", function () {

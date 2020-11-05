@@ -1,11 +1,11 @@
 $(document).ready(function() {
     // Getting references to our form and input
-    var signUpForm = $("form.signup");
+    var signUpBtn = $("#signupBtn");
     var islandNameInput = $("input#islandName-input");
     var dodoInput = $("input#dodo-input");
   
     // When the signup button is clicked, we validate the email and password are not blank
-    signUpForm.on("submit", function(event) {
+    signUpBtn.on("click", function(event) {
       event.preventDefault();
       var userData = {
         islandName: islandNameInput.val().trim(),
@@ -29,7 +29,7 @@ $(document).ready(function() {
         dodo: dodo
       })
         .then(function(data) {
-          window.location.replace("/members");
+          window.location.replace("/home");
           // If there's an error, handle it by throwing up a bootstrap alert
         })
         .catch(handleLoginErr);

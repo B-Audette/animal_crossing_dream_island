@@ -9,6 +9,7 @@ passport.use(new LocalStrategy(
     usernameField: "islandName"
   },
   function(islandName, dodo, done) {
+    console.log("starting strategy")
     // When a user tries to sign in this code runs
     db.User.findOne({
       where: {

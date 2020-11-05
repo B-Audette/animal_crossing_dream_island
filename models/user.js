@@ -6,10 +6,7 @@ module.exports = function(sequelize, DataTypes) {
     // The island name cannot be null
     islandName: {
       type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        isislandName: true
-      }
+      allowNull: false
     },
     // The dodo cannot be null
     dodo: {

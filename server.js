@@ -19,6 +19,7 @@ var db = require("./models");
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(require("cookie-parser")());
 
 // Static directory
 app.use(express.static("public"));

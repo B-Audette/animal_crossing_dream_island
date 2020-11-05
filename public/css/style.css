@@ -1,42 +1,47 @@
+html {
+    padding: 1%;
+}
 body.members {
     background-image: url("../images/dream.gif");
+    background-repeat: no-repeat;
     background-size: cover;
+    background-color: rgb(50, 32, 105);
 }
-
 body.login {
     background-image: url("../images/beachnight.jpg");
-    background-size: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgb(3, 0, 50);
 }
-
 body.signup {
     background-image: url("../images/plane.png");
+    background-repeat: no-repeat;
     background-size: cover;
+    background-color: rgb(111, 132, 62);
 }
-
 @font-face{
     font-family: "finkHeavy";
     src: url('./FinkHeavy.woff');
     }
-
 * {
     font-family: FinkHeavy, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-
 .loginHeader {
     background-image: url("../images/star.gif");
     color: aliceblue;
     height: 190px;
 }
-
 .signupHeader {
     color: rgb(128, 73, 41);
     height: 190px;
 }
-
 .jumbotron {
-    background-color: rgb(255, 240, 207, 0.5);
+    background-color: rgba(50, 32, 105, 0.432);
+    color: rgba(255, 255, 255, 0.877)
 }
-
+p.display-4 {
+    font-size: 184%;
+}
 .row.login {
     background-color: rgb(80, 78, 124, 0.8);
     color: aliceblue;
@@ -44,7 +49,6 @@ body.signup {
     margin-left: 25%;
     margin-right: 25%;
 }
-
 .row.new {
     background-color: rgb(80, 78, 124, 0.8);
     color: aliceblue;
@@ -53,27 +57,20 @@ body.signup {
     margin-right: 25%;
     width: 500px;
 }
-
 .login a {
     color: rgb(232, 188, 56);
 }
-
 .signUp a {
     color: rgb(232, 188, 56);
 }
-
-
 button.btn.btn-default {
     color: aliceblue;
 }
-
 img {
-    margin: 2%;
     max-height: 275px;
     padding: 2%;
-    margin-left: 15%;
+    /* margin-left: 5%; */
 }
-
 .searchReturn {
     border-radius: 10px;
     background-color: rgb(210, 83, 234, 0.8);
@@ -81,62 +78,60 @@ img {
     padding: 2%;
     margin-bottom: 13%;
 }
-
 input#searchbtn {
-    background-image: url("/public/images/leaf.png");
-    width: 35px;
+    width: 70px;
     height: 35px;
 }
-
 .bio {
     border-radius: 15px;
     background-color: rgb(255, 240, 207);
-    padding-bottom: 1%;
+    padding: 1%;
+    margin-left: 1%;
+    margin-right: 1%;
 }
-
 .lists {
     margin: 2%;
 }
-
 #poster {
+    border-radius: 25px;
+    background-image: url(../images/blueSky.gif);
+    width: 350px;
+    height: fit-content;
+}
+#house {
     border-radius: 25px;
     background-image: url(../images/blueSky.gif);
     /* background: rgb(255,255,255);
     background: radial-gradient(circle, rgba(255,255,255,1) 20%, rgba(50,32,105,1) 80%); */
     height: fit-content;
 }
-
-#house {
-    border-radius: 50px;
-    background-image: url(../images/blueSky.gif);
-    /* background: rgb(255,255,255);
-    background: radial-gradient(circle, rgba(255,255,255,1) 20%, rgba(50,32,105,1) 80%); */
-    height: fit-content;
-}
-
 .dreamyList {
     border-radius: 15px;
     background-color: rgb(255, 240, 207);
+    margin-bottom: 2%;
 }
-
 .myIsland {
     border-radius: 15px;
     background-color: rgb(255, 240, 207);
 }
-
 .logo {
-    float: right;
-    height: 100px;
+    height: 135px;
+    position: absolute;
+    top: -40px;
+    right: 10px;
 }
-
 .twins{
+    position: absolute;
+    bottom: -27px;
+    left: -100x;
     max-height: 200px;
 }
-
 .orville{
+    position: absolute;
+    bottom: -28px;
+    right: 80px;
     max-height: 200px;
 }
-
 footer {
     background-color: rgb(50, 32, 105);
     position: fixed;
@@ -144,25 +139,34 @@ footer {
     bottom: 0;
     width: 100%;
     margin-top: 2%;
-    height: 200px;
+    height: 160px;
 }
-
 footer.login {
-    background-color: unset;
+    background-color:  rgb(3, 0, 50);
+    height: 155px;
 }
-
 .celeste {
+    position: absolute;
+    bottom: -27px;
+    left: -23px;
     height: 200px;
 }
-
+footer.signUp {
+    background-color:  rgb(111, 132, 62);
+    height: 155px;
+}
 .tomnook {
+    position: absolute;
+    bottom: -174px;
+    left: -50px;
     height: 250px;
 }
-
 .isabelle {
-    height: 250px;
+    position: absolute;
+    bottom: -110px;
+    right: 25px;
+    height: 200px;
 }
-
 .btn {
     border-radius: 8px;
     background-color: rgb(50, 32, 105);
@@ -171,27 +175,23 @@ footer.login {
     margin: 1%;
     height: 60px;
 }
-
 .leaf {
     max-width: 35px;
     margin-left: 0%;
 }
-
 .addDreamy {
     max-width: 35px;
     margin-left: 0%;
 }
-
 #addIsland {
     border-radius: 8px;
     background-color: rgb(15, 18, 63);
     border-color: rgb(255, 240, 207);
     cursor: pointer;
-    margin: 1%;
+    margin-left: 25%;
     padding: 1%;
     height: fit-content;
 }
-
 #addDreamy {
     border-radius: 8px;
     background-color: rgb(15, 18, 63);
@@ -201,7 +201,6 @@ footer.login {
     padding: 1%;
     height: fit-content;
 }
-
 .islandbtn {
     border-radius: 8px;
     background-color: rgb(50, 32, 105);
@@ -212,7 +211,6 @@ footer.login {
     position: relative;
     float: right;
 }
-
 .deletebtn {
     border-radius: 8px;
     background-color: rgb(50, 32, 105);
@@ -223,7 +221,6 @@ footer.login {
     position: relative;
     float: right;
 }
-
 .dreamybtn {
     border-radius: 8px;
     background-color: rgb(50, 32, 105);
@@ -234,28 +231,92 @@ footer.login {
     position: relative;
     float: right;
 }
-
 li{ 
-    height: 33px;
-    font-size: 18px;
+    height: 44px;
+    font-size: 25px;
 }
-
 input {
     height: 50px;
     border-radius: 8px;
+    width: 300px;
+    margin: 1%;
 }
-
 .islandIcon {
-    max-width: 20px;
+    max-width: 35px;
     margin-left: 0%;
 }
-
 .moveDreamy {
-    max-width: 20px;
+    max-width: 35px;
     margin-left: 0%;
 }
-
 .removeIcon {
-    max-width: 20px;
+    max-width: 35px;
     margin-left: 0%;
 }
+h5 {
+    border-radius: 10px;
+    background-color: rgb(210, 83, 234, 0.8);
+    width: 210px;
+    margin-left: 5%
+}
+a.navbar-brand {
+    position: fixed;
+    bottom: 1px;
+    right: 50px;
+}
+@media screen and (max-width: 768px) { 
+    img {
+        max-height: 215px;
+        padding: 5%;
+    }
+    .isabelle {
+        visibility: hidden;
+    }
+    .tomnook {
+        visibility: hidden;
+    }
+    .celeste {
+        visibility: hidden;
+    }
+    img.orville {
+        visibility: hidden;
+    }
+    img.twins {
+        visibility: hidden;
+    }
+    footer {
+        height: 50px;
+    }
+    li {
+        font-size: 20px;
+    }
+    .display-4 {
+        font-size: 40px;
+    }
+    img.logo {
+        max-height: 90px;
+    }
+    #house {
+        width: 65%;
+    }
+    #poster {
+        width: 65%;
+        margin-bottom: 1%;
+        padding: 1%;
+    }
+    .row.new {
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-bottom: 1%;
+        width: 300px;
+    }
+    .row.login {
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-bottom: 1%;
+        width: 300px;
+    }
+    p.display-4 {
+        font-size: 101%;
+    }
+ }
