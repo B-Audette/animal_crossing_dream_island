@@ -26,7 +26,7 @@ $(document).ready(function() {
     function loginUser(islandName, dodo) {
       $.post("/api/login", {
         islandName: islandName,
-        dodo: dodo
+        password: dodo
       })
         .then(function() {
           window.location.replace("/home");

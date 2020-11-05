@@ -50,14 +50,20 @@ module.exports = function (app) {
 
   // GET route for getting all of the villagers in database
   app.get("/api/villagers", function (req, res) {
-    db.Villager.findAll()
+    db.Villager.findAll({
+      where:
+      {
+        UserId: req.user.id
+      }
+    })
       .then(function (dbVillager) {
         res.json(dbVillager);
       });
   });
 
-  // POST route to add villager to database
+  // POST route to add villager to database with islandName
   app.post("/api/villagers", function (req, res) {
+    req.body.UserId = req.user.id
     db.Villager.create(req.body)
       .then(function (data) {
         req.body.id = (data.dataValues.id)

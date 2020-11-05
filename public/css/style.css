@@ -319,4 +319,18 @@ a.navbar-brand {
     p.display-4 {
         font-size: 101%;
     }
+    .deletebtn {
+        width: 26%;
+        height: 34px;
+    }
+    .dreamybtn {
+        width: 22%;
+        height: 34px;
+    }
+    .islandIcon {
+        visibility: collapse;
+    }
+    .removeIcon {
+        visibility: collapse;
+    }
  }

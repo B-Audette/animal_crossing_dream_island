@@ -2,6 +2,7 @@
     // and updates the HTML on the page
     $.get("/api/user_data").then(function(data) {
         $(".islandName").text(data.islandName);
+        console.log(data.islandName)
       });
 
     // pulls villagers to dropdown search
@@ -43,12 +44,14 @@
         })
     })
     )
+
+
     // addIsland and addDreamy adds villager to our database -
     $("#addIsland").click((function (event) {
         event.preventDefault();
         let currentNameIsland = $("#currentName").text().slice(6)
         console.log(currentNameIsland)
-        $.post("/api/villagers", { "name": currentNameIsland, "dreamy": false })
+        $.post("/api/villagers", { "name": currentNameIsland, "dreamy": false})
             .then(function (response) {
                 console.log(response);
                 let item = (`<li id="island-${response.id}" class="island"name="${response.name}">${response.name}<button id="${response.id}"  class="deletebtn">Delete <img class="removeIcon" src="./images/deleteIcon.png"></button></li>`)
@@ -61,6 +64,7 @@
         event.preventDefault();
         let currentNameIsland = $("#currentName").text().slice(6)
         console.log(currentNameIsland)
+       
         $.post("/api/villagers", { "name": currentNameIsland, "dreamy": true })
             .then(function (response) {
                 console.log(response);
@@ -109,9 +113,18 @@
 
        //pulls in villagers in our database - add once passport is set up 
        //to pull in where user matches user on page load
-       $("#view").on("click", function () {
-        $.get("api/villagers", function (data) {
-            console.log(data);
+       $(document).ready(function() {
+        $.get("/api/villagers", function (response) {
+            console.log(response);
+            for (let i = 0; i < response.length; i++) {
+                if (response[i].dreamy === false)
+                {let item = (`<li id="island-${response[i].id}" class="island"name="${response[i].name}">${response[i].name}<button id="${response[i].id}"  class="deletebtn">Delete <img class="removeIcon" src="./images/deleteIcon.png"></button></li>`)
+                $("#onIsland").append(item)}
+                
+                if (response[i].dreamy === true)
+                {let item = (`<li id="dreamy-${response[i].id}" class="dreamy"name="${response[i].name}">${response[i].name}<button id="${response[i].id}"  class="deletebtn">Delete <img class="removeIcon" src="./images/deleteIcon.png"></button><button id="${response.id}" name="${response[i].name}" class="dreamybtn">Move<img class="islandIcon" src="./images/islandIcon.png"></button></li>`)
+                $("#isDreamy").append(item)}
+            }
         })
     })
     //================================================================
