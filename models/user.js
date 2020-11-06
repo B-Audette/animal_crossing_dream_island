@@ -1,7 +1,7 @@
 // Requiring bcrypt for password hashing. Using the bcryptjs version as the regular bcrypt module sometimes causes errors on Windows machines
 var bcrypt = require("bcryptjs");
 // Creating our User model
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   var User = sequelize.define("User", {
     // The island name cannot be null
     islandName: {
@@ -16,20 +16,20 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  User.associate = function(models) {
+  User.associate = function (models) {
     // Associating Author with Posts
     // When an Author is deleted, also delete any associated Posts
     User.hasMany(models.Villager, {
       onDelete: "cascade"
-    });
+    });ß
   };
   // Creating a custom method for our User model. This will check if an unhashed dodo entered by the user can be compared to the hashed dodo stored in our database
-  User.prototype.validdodo = function(dodo) {
+  User.prototype.validdodo = function (dodo) {
     return bcrypt.compareSync(dodo, this.dodo);
   };
   // Hooks are automatic methods that run during various phases of the User Model lifecycle
   // In this case, before a User is created, we will automatically hash their dodo
-  User.addHook("beforeCreate", function(user) {
+  User.addHook("beforeCreate", function (user) {
     user.dodo = bcrypt.hashSync(user.dodo, bcrypt.genSaltSync(10), null);
   });
   return User;

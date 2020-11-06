@@ -8,14 +8,14 @@ passport.use(new LocalStrategy(
   {
     usernameField: "islandName"
   },
-  function(islandName, dodo, done) {
+  function (islandName, dodo, done) {
     console.log("starting strategy")
     // When a user tries to sign in this code runs
     db.User.findOne({
       where: {
         islandName: islandName
       }
-    }).then(function(dbUser) {
+    }).then(function (dbUser) {
 
       if (!dbUser) {
         return done(null, false, {
@@ -37,11 +37,11 @@ passport.use(new LocalStrategy(
 // In order to help keep authentication state across HTTP requests,
 // Sequelize needs to serialize and deserialize the user
 // Just consider this part boilerplate needed to make it all work
-passport.serializeUser(function(user, cb) {
+passport.serializeUser(function (user, cb) {
   cb(null, user);
 });
 
-passport.deserializeUser(function(obj, cb) {
+passport.deserializeUser(function (obj, cb) {
   cb(null, obj);
 });
 
