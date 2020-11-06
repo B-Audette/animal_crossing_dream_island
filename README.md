@@ -1,64 +1,36 @@
-Project Title:
-  -------------
+<h1 align="center">Welcome to Animal Crossing Dreamy Island 👋</h1>
+<p>
+  <a href="#" target="_blank">
+    <img alt="License: The Unlicense" src="https://img.shields.io/badge/License-The Unlicense-yellow.svg" />
+  </a>
+</p>
 
-  ## Animal Crossing Island Creator
-  ![License](https://img.shields.io/badge/License-TheUnlicense-blue)
-## Description
---------------
+> Search for a villager by name and it will call data from database and display relavent information about villager. Then you can decide to add them to your island or dream island. Once added you can move villagers from Island to Dream Island, or delete villagers.
 
-Allows you to search for Animal Crossing Villagers and shows you information about villagers and allows you to add them to your island or dream island.
+![A gif of the login page](https://media.giphy.com/media/14nimXs38E5xIpdUIX/giphy.gif)
 
+### 🏠 [Homepage](https://github.com/B-Audette/animal_crossing_dream_island)
 
-## Table of Contents 
-
-* [Installation](#installation)
--------------------------------
-* [Usage](#usage)
------------------
-* [Tests](#tests)
------------------
-* [License](#license)
----------------------
-* [Contributing](#contributing)
--------------------------------
-* [Questions](#questions)
--------------------------
-
-## Installation
-
-Installation directions:
-========================
-npm i
-
+### ✨ [Demo](https://floating-earth-07738.herokuapp.com/login)
 
 ## Usage
 
-Usage directions
-================
-Search for a villager by name and it will call data from database and display relavent information about villager. Then you can decide to add them to your island or dream island. Once added you can move villagers from Island to Dream Island, or delete villagers.
+```sh
+Create and Island and a custom Dodo code so you can access it from anywhere, anytime in the future! Search Villagers to learn about them and add them to your Island or to your Dreamy Island
+```
 
+## Authors
 
-## Tests
+👤 **Brooklynne Audette, Aaron Oberg, Amanda Anderson, Eric Osowski**
 
-Commands to run tests:
-======================
-There are currently no tests for this project.
+* Github: [Brooklynne Audette](https://github.com/B-Audette)
+* Github: [Amanda Anderson](https://github.com/aanderson120)
+* Github: [Aaron oberg](https://github.com/TotalAce)
+* Github: [Eric Osowski](https://github.com/EricJamesOsowski)
 
+## Show your support
 
-## License
-----------
+Give a ⭐️ if this project helped you!
 
-Currently under the The Unlicense license.
-
-
-## Contributing
-
-Heres how you can contribute!
-=============================
-email us to discuss contributing!
-
-
-## Questions
-------------
-
-Questions can be directed to eric.j.osowski@icloud.com. Here is my [GitHub](https://github.com/EricJamesOsowski) for more of my work
+***
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
