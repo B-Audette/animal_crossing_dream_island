@@ -31,11 +31,11 @@ Create and Island and a custom Dodo code so you can access it from anywhere, any
 ## Made Possible By
 
 Node + express
-[Animal Crossing NPM](https://www.npmjs.com/package/animal-crossing)
-[Passport.js](https://www.npmjs.com/package/passport)
-[Bcrypt.js](https://www.npmjs.com/package/bcryptjs)
-Heroku
-Sequelize 
+[Animal Crossing NPM](https://www.npmjs.com/package/animal-crossing)<br>
+[Passport.js](https://www.npmjs.com/package/passport)<br>
+[Bcrypt.js](https://www.npmjs.com/package/bcryptjs)<br>
+Heroku<br>
+Sequelize<br>
 And Viewers Like You!
 
 ## Show your support
