@@ -22,7 +22,7 @@ $(document).ready(function () {
   });
 
   // Does a post to the signup route. If successful, we are redirected to the members page
-  // Otherwise we log any errorsß
+  // Otherwise we log any errors
   function signUpUser(islandName, dodo) {
     $.post("/api/signup", {
       islandName: islandName,

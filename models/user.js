@@ -21,7 +21,7 @@ module.exports = function (sequelize, DataTypes) {
     // When an Author is deleted, also delete any associated Posts
     User.hasMany(models.Villager, {
       onDelete: "cascade"
-    });ß
+    });
   };
   // Creating a custom method for our User model. This will check if an unhashed dodo entered by the user can be compared to the hashed dodo stored in our database
   User.prototype.validdodo = function (dodo) {
