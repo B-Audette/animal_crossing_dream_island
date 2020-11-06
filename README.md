@@ -25,7 +25,7 @@ Create and Island and a custom Dodo code so you can access it from anywhere, any
 
 * Github: [Brooklynne Audette](https://github.com/B-Audette)
 * Github: [Amanda Anderson](https://github.com/aanderson120)
-* Github: [Aaron oberg](https://github.com/TotalAce)
+* Github: [Aaron Oberg](https://github.com/TotalAce)
 * Github: [Eric Osowski](https://github.com/EricJamesOsowski)
 
 ## Show your support
