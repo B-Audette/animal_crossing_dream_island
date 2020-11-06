@@ -28,6 +28,16 @@ Create and Island and a custom Dodo code so you can access it from anywhere, any
 * Github: [Aaron Oberg](https://github.com/TotalAce)
 * Github: [Eric Osowski](https://github.com/EricJamesOsowski)
 
+## Made Possible By
+
+Node + express
+[Animal Crossing NPM](https://www.npmjs.com/package/animal-crossing)
+[Passport.js](https://www.npmjs.com/package/passport)
+[Bcrypt.js](https://www.npmjs.com/package/bcryptjs)
+Heroku
+Sequelize 
+And Viewers Like You!
+
 ## Show your support
 
 Give a ⭐️ if this project helped you!
